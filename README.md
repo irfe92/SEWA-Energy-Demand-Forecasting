@@ -1,0 +1,112 @@
+# SEWA-Energy-Demand-Forecasting
+Capstone Project for Imperial College Business School's Professional Certificate Program
+
+# SEWA Weather and Power Consumption Dataset (2021)
+
+## Overview
+This dataset provides comprehensive weather and power consumption data for the Sharjah Electricity and Water Authority (SEWA) for the year 2021. Curated by Mohammed Saeed in 2023, it is adapted from the larger "SEWA Electricity Demand Forecasting -- 2020 and 2021" dataset hosted on Mendeley Data (Version 2). The data spans from 1 January 2021 to 31 December 2021 and is intended for electricity demand forecasting, predictive modeling, and energy policy analysis.
+
+**Note:** This dataset contains only the data for the year 2021, which has been cleaned and adapted while retaining its analytical integrity.
+
+## Dataset Details
+- **Title:** SEWA Weather and Power Consumption Dataset for 2021
+- **Curator:** Mohammed Saeed
+- **Publication Year:** 2023
+- **Source Dataset:** "SEWA Electricity Demand Forecasting -- 2020 and 2021"
+- **Repository:** Mendeley Data
+- **Version:** 2
+- **DOI:** [10.17632/4rjc87zrd3.2](https://doi.org/10.17632/4rjc87zrd3.2)
+- **Time Period:** 1 Jan 2021 – 31 Dec 2021 (Daily records)
+- **Format:** Tabular data (e.g., CSV)
+
+## Data Columns
+
+| Column Name          | Description                          | Unit           |
+|----------------------|--------------------------------------|----------------|
+| Date                 | Date of the record                   | YYYY-MM-DD     |
+| Day                  | Day of the week                      | Text (e.g., Monday) |
+| MAX Tem              | Maximum temperature of the day       | Celsius (°C)   |
+| Min Tem              | Minimum temperature of the day       | Celsius (°C)   |
+| Max Hum              | Maximum humidity of the day          | Percentage (%) |
+| Min Hum              | Minimum humidity of the day          | Percentage (%) |
+| Temp                 | Actual / Average temperature         | Celsius (°C)   |
+| Hum                  | Actual / Average humidity            | Percentage (%) |
+| SEWA MIN LOAD(MW)    | SEWA minimum load                    | Megawatts (MW) |
+| SEWA Peak Load(MW)   | SEWA peak load                       | Megawatts (MW) |
+| SEWA Energy/hr.      | SEWA energy consumption per hour     | Megawatt-hours (MWh) |
+
+## Potential Use Cases
+This dataset is valuable for:
+- Energy demand forecasting and predictive modeling
+- Analyzing the relationship between weather patterns and electricity consumption
+- Load forecasting for grid management
+- Weather trend analysis in the Sharjah region
+- Climate impact studies on energy systems
+- Academic research and policy analysis in the energy sector
+
+## Project Goal : Predictive Modeling for Energy Consumption
+The primary objective of this project is to develop accurate predictive models for energy consumption outcomes by systematically tuning parameters, implementing cross-validation techniques, and applying theoretical knowledge gained from course.
+
+## Methodology
+
+### 1. Problem Formulation
+- **Target Variable:** Predict SEWA energy consumption (MWh/hour)
+- **Features:** Weather parameters (temperature, humidity) and calendar variables
+- **Prediction Tasks:**
+  - Optimizing Energy Consumption Forecasting Using Tree-Based Models and Parameter Tuning 
+
+### 2. Data Preparation
+Proposed preprocessing steps:
+1. Handle missing values (if any) by generating a regular sequance of dates and mergind with the original data
+2. Feature engineering:
+   - Remove the 'C' and '%' characters and convert columns to numeric
+   - Create lag features for time-series analysis of Temperature (lag 1, lag 2, lag 3)
+   - Generate MA7 & MA14 of the dependent variable
+   - Remove 1 outlier (last day of consumption series, maybe not the entire 24 hours were available for the last day)
+   - Generate additional calendar variables: Month, Day of Yer, Day of Month, Week of Year, Day of Week, Is Week End
+5. Train-test split 80%/20%
+
+### 3. Framework for Developing Predictive Models
+
+I will start by using MLJAR AutoML to establish a performance benchmark, identify the most promising algorithms, gain feature insights, and obtain a summary report to guide my next steps.
+It's an effortless starting point for refining my data science intuition.
+
+- **Phase 1: MLJAR AutoML for Tree-Based Models**
+  - Gradient Boosting Machines (XGBoost, LightGBM, Catboost)
+
+- **Phase 2: Catboost implementation**
+ - Default Parameter Modeling (baseline)
+ - Assess Variable Importance
+ - Adjust Explanatory Variables
+ - Optuna Parameter Tuning
+ - RandomizedSearchCV & GridSearchCV Tuning
+ - Fit Final Model
+ - Make Predictions
+ - Evaluate Metrics 
+
+### 4. Hyperparameter Tuning Strategy
+Approach: Systematic parameter optimization
+Methods:
+- Grid Search with cross-validation
+- Random Search for efficiency
+- Bayesian Optimization (Optuna, Hyperopt)
+- Gradient-based optimization for neural networks
+
+Key Parameters to Tune:
+- Tree-based models: n_estimators, max_depth, learning_rate
+- Neural networks: layers, neurons, dropout rate, learning rate
+- Time-series models: window size, seasonal components
+
+### 5. Cross-Validation Implementation
+Validation strategies:
+1. TimeSeriesSplit (n_splits=5) - Preserve temporal order
+2. Walk-forward validation for time-series
+3. Nested cross-validation for unbiased performance estimation
+4. Validation metrics: MAE, RMSE, MAPE, R² score
+
+### 6. Model Evaluation Framework
+- **Primary Metrics:** Mean Absolute Error (MAE), Root Mean Square Error (RMSE)
+- **Secondary Metrics:** Mean Absolute Percentage Error (MAPE), R-squared
+- **Business Metrics:** Peak prediction accuracy, cost savings estimation
+- **Statistical Tests:** Diebold-Mariano test for model comparison
+
