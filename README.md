@@ -122,7 +122,7 @@ The above table summarizes the performance of different models based on their me
     I've kept the params from GridSearchCV only. 
 
  - Make Predictions
-  ![Predict on Test with GridSearchCV](https://raw.githubusercontent.com/irfe92/SEWA-Energy-Demand-Forecasting/main/Prediction_on_Test_Grid_Searcg_CV.png)
+  ![Predict on Test with GridSearchCV](https://raw.githubusercontent.com/irfe92/SEWA-Energy-Demand-Forecasting/main/Prediction_on_Test_Grid_Search_CV.png)
 
  - Evaluate Metrics 
 After conducting hyperparameter optimization using GridSearchCV, the tuned CatBoost model achieved a 1% improvement in MAPE on the test set compared to the baseline model.
