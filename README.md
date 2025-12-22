@@ -81,7 +81,13 @@ The above table summarizes the performance of different models based on their me
  - Default Parameter Modeling (baseline)
    ![Catboost Default](https://raw.githubusercontent.com/irfe92/SEWA-Energy-Demand-Forecasting/main/catboost_default.png)
  - Prediction on Test based on Default Parameter Modeling
-   ![Predict on Test](https://raw.githubusercontent.com/irfe92/SEWA-Energy-Demand-Forecasting/main/Prediction_on_Test.png) 
+   Mean of actual values :  1487.5857142857142
+   Mean of predicted values:  1485.9115968489148
+   ![Predict on Test](https://raw.githubusercontent.com/irfe92/SEWA-Energy-Demand-Forecasting/main/Prediction_on_Test.png)
+   Testing performance
+   RMSE_test: 54.47
+   MAPE_test: 0.03
+   R2: 0.99
  - Assess Variable Importance
  - Adjust Explanatory Variables
  - Optuna Parameter Tuning
