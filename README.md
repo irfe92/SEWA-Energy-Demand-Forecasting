@@ -66,7 +66,7 @@ It's an effortless starting point for refining one's data science intuition.
 - **Phase 1: MLJAR AutoML for Tree-Based Models**
   - Gradient Boosting Machines (XGBoost, LightGBM, Catboost)
  
-  # AutoML Results:
+  **AutoML Results:**
 
  | Best model             | Name                 | Model Type | Metric Type | Metric Value | Train Time |
  |------------------------|----------------------|------------|-------------|--------------|------------|
@@ -75,7 +75,7 @@ It's an effortless starting point for refining one's data science intuition.
  | 3_Default_CatBoost     | CatBoost             | mape       | 0.0369111   | 7.86         |
  | the best               | Ensemble             | Ensemble   | mape        | 0.0354686    | 0.38       |
 
-This table summarizes the performance of different models based on their metric values.
+The above table summarizes the performance of different models based on their metric values.
 
 - **Phase 2: Catboost implementation**
  - Default Parameter Modeling (baseline)
