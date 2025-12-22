@@ -4,7 +4,7 @@ Capstone Project for Imperial College Business School's Professional Certificate
 # SEWA Weather and Power Consumption Dataset (2021)
 
 ## Overview
-This dataset provides comprehensive weather and power consumption data for the Sharjah Electricity and Water Authority (SEWA) for the year 2021. Curated by Mohammed Saeed in 2023, it is adapted from the larger "SEWA Electricity Demand Forecasting -- 2020 and 2021" dataset hosted on Mendeley Data (Version 2). The data spans from 1 January 2021 to 31 December 2021 and is intended for electricity demand forecasting, predictive modeling, and energy policy analysis.
+This dataset provides weather and power consumption data for the Sharjah Electricity and Water Authority (SEWA) for the year 2021. Curated by Mohammed Saeed in 2023, it is adapted from the larger "SEWA Electricity Demand Forecasting -- 2020 and 2021" dataset hosted on Mendeley Data (Version 2). The data goes from 1 January 2021 to 31 December 2021 and is intended for electricity demand forecasting, predictive modeling, and energy policy analysis.
 
 **Note:** This dataset contains only the data for the year 2021, which has been cleaned and adapted while retaining its analytical integrity.
 
