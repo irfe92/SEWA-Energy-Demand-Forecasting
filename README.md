@@ -63,21 +63,19 @@ Train-test split 80%/20%
 I will start by using MLJAR AutoML to establish a performance benchmark, identify the most promising algorithms, gain feature insights, and obtain a summary report to guide my next steps.
 It's an effortless starting point for refining one's data science intuition.
 
-# AutoML Leaderboard as a markdown table:
-#
-# ### AutoML Leaderboard
-#
-# | Best model             | Name                 | Model Type | Metric Type | Metric Value | Train Time |
-# |------------------------|----------------------|------------|-------------|--------------|------------|
-# | 1_Default_LightGBM     | LightGBM             | mape       | 0.0430291   | 18.33        |
-# | 2_Default_Xgboost      | Xgboost              | mape       | 0.0401356   | 15.78        |
-# | 3_Default_CatBoost     | CatBoost             | mape       | 0.0369111   | 7.86         |
-# | the best               | Ensemble             | Ensemble   | mape        | 0.0354686    | 0.38       |
-#
-# This table summarizes the performance of different models based on their metric values.
-
 - **Phase 1: MLJAR AutoML for Tree-Based Models**
   - Gradient Boosting Machines (XGBoost, LightGBM, Catboost)
+ 
+  # AutoML Results:
+
+ | Best model             | Name                 | Model Type | Metric Type | Metric Value | Train Time |
+ |------------------------|----------------------|------------|-------------|--------------|------------|
+ | 1_Default_LightGBM     | LightGBM             | mape       | 0.0430291   | 18.33        |
+ | 2_Default_Xgboost      | Xgboost              | mape       | 0.0401356   | 15.78        |
+ | 3_Default_CatBoost     | CatBoost             | mape       | 0.0369111   | 7.86         |
+ | the best               | Ensemble             | Ensemble   | mape        | 0.0354686    | 0.38       |
+
+This table summarizes the performance of different models based on their metric values.
 
 - **Phase 2: Catboost implementation**
  - Default Parameter Modeling (baseline)
