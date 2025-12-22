@@ -102,48 +102,25 @@ The above table summarizes the performance of different models based on their me
    
  - Optuna Parameter Tuning
    
-   **Final Parameters:**
-      **iterations:** : 900
-      **learning_rate** : 0.09427012525886609
-      **depth** : 8
-      **l2_leaf_reg** : 7
-      **colsample_bylevel** : 0.8784849178931682
-      **random_strength** : 0
+   **Final Parameters Optuna:**
+      **iterations:** : 747
+      **learning_rate** : 0.09
+      **depth** : 10
+      **l2_leaf_reg** : 2
 
-
-      **MAPE: 0.18276785567644432**
-      MAPE went down from 3% to 0.18%
    
- - RandomizedSearchCV & GridSearchCV Tuning
-
+ - RandomizedSearchCV & GridSearchCV
+   I've tried both: GridSearchCV as I have a small parameter spaces and ideally would like to have the best parameters possible, and          RandomizedSearchCV to see how "good enough" results perform.
+    **Final Parameters GridSearchCV:**
+      **iterations:** : 900
+      **learning_rate** : 0.02
+      **depth** : 6
+      **l2_leaf_reg** : 1
+   
    
  - Fit Final Model
+    I've kept the params from GridSearchCV only. 
+
  - Make Predictions
  - Evaluate Metrics 
-
-### 4. Hyperparameter Tuning Strategy
-Approach: Systematic parameter optimization
-Methods:
-- Grid Search with cross-validation
-- Random Search for efficiency
-- Bayesian Optimization (Optuna, Hyperopt)
-- Gradient-based optimization for neural networks
-
-Key Parameters to Tune:
-- Tree-based models: n_estimators, max_depth, learning_rate
-- Neural networks: layers, neurons, dropout rate, learning rate
-- Time-series models: window size, seasonal components
-
-### 5. Cross-Validation Implementation
-Validation strategies:
-1. TimeSeriesSplit (n_splits=5) - Preserve temporal order
-2. Walk-forward validation for time-series
-3. Nested cross-validation for unbiased performance estimation
-4. Validation metrics: MAE, RMSE, MAPE, R² score
-
-### 6. Model Evaluation Framework
-- **Primary Metrics:** Mean Absolute Error (MAE), Root Mean Square Error (RMSE)
-- **Secondary Metrics:** Mean Absolute Percentage Error (MAPE), R-squared
-- **Business Metrics:** Peak prediction accuracy, cost savings estimation
-- **Statistical Tests:** Diebold-Mariano test for model comparison
 
