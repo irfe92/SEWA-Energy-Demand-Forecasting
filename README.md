@@ -79,6 +79,7 @@ The above table summarizes the performance of different models based on their me
 
 - **Phase 2: Catboost implementation**
  - Default Parameter Modeling (baseline)
+   ![Catboost Default](https://raw.githubusercontent.com/irfe92/SEWA-Energy-Demand-Forecasting/main/catboost_default.png)
  - Assess Variable Importance
  - Adjust Explanatory Variables
  - Optuna Parameter Tuning
