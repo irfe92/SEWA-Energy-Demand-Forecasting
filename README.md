@@ -35,25 +35,16 @@ This dataset provides weather and power consumption data for the Sharjah Electri
 | SEWA Peak Load(MW)   | SEWA peak load                       | Megawatts (MW) |
 | SEWA Energy/hr.      | SEWA energy consumption per hour     | Megawatt-hours (MWh) |
 
-## Potential Use Cases
-This dataset is valuable for:
-- Energy demand forecasting and predictive modeling
-- Analyzing the relationship between weather patterns and electricity consumption
-- Load forecasting for grid management
-- Weather trend analysis in the Sharjah region
-- Climate impact studies on energy systems
-- Academic research and policy analysis in the energy sector
 
-## Project Goal : Predictive Modeling for Energy Consumption
+## Project Goal : Energy Consumption Forecasting Using Tree-Based Models and Parameter Tuning
 The primary objective of this project is to develop accurate predictive models for energy consumption outcomes by systematically tuning parameters, implementing cross-validation techniques, and applying theoretical knowledge gained from course.
 
 ## Methodology
 
-### 1. Problem Formulation
+### 1. Features
 - **Target Variable:** Predict SEWA energy consumption (MWh/hour)
 - **Features:** Weather parameters (temperature, humidity) and calendar variables
-- **Prediction Tasks:**
-  - Optimizing Energy Consumption Forecasting Using Tree-Based Models and Parameter Tuning 
+
 
 ### 2. Data Preparation
 Proposed preprocessing steps:
@@ -64,12 +55,13 @@ Proposed preprocessing steps:
    - Generate MA7 & MA14 of the dependent variable
    - Remove 1 outlier (last day of consumption series, maybe not the entire 24 hours were available for the last day)
    - Generate additional calendar variables: Month, Day of Yer, Day of Month, Week of Year, Day of Week, Is Week End
-5. Train-test split 80%/20%
+  
+### 3. Train and Test Split     
+Train-test split 80%/20%
 
 ### 3. Framework for Developing Predictive Models
-
 I will start by using MLJAR AutoML to establish a performance benchmark, identify the most promising algorithms, gain feature insights, and obtain a summary report to guide my next steps.
-It's an effortless starting point for refining my data science intuition.
+It's an effortless starting point for refining one's data science intuition.
 
 - **Phase 1: MLJAR AutoML for Tree-Based Models**
   - Gradient Boosting Machines (XGBoost, LightGBM, Catboost)
