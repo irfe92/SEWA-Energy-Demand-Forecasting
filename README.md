@@ -103,18 +103,20 @@ The above table summarizes the performance of different models based on their me
  - Optuna Parameter Tuning
    
    **Final Parameters:**
-   **iterations:** : 900
-   **learning_rate** : 0.09427012525886609
-   **depth** : 8
-   **l2_leaf_reg** : 7
-   **colsample_bylevel** : 0.8784849178931682
-   **random_strength** : 0
+      **iterations:** : 900
+      **learning_rate** : 0.09427012525886609
+      **depth** : 8
+      **l2_leaf_reg** : 7
+      **colsample_bylevel** : 0.8784849178931682
+      **random_strength** : 0
 
 
-**MAPE: 0.18276785567644432**
-MAPE went down from 3% to 0.18%
+      **MAPE: 0.18276785567644432**
+      MAPE went down from 3% to 0.18%
    
  - RandomizedSearchCV & GridSearchCV Tuning
+
+   
  - Fit Final Model
  - Make Predictions
  - Evaluate Metrics 
