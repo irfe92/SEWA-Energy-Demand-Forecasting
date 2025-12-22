@@ -59,7 +59,7 @@ Proposed preprocessing steps:
 ### 3. Train and Test Split     
 Train-test split 80%/20%
 
-### 3. Framework for Developing Predictive Models
+### 4. Framework for Developing Predictive Models
 I will start by using MLJAR AutoML to establish a performance benchmark, identify the most promising algorithms, gain feature insights, and obtain a summary report to guide my next steps.
 It's an effortless starting point for refining one's data science intuition.
 
@@ -122,5 +122,8 @@ The above table summarizes the performance of different models based on their me
     I've kept the params from GridSearchCV only. 
 
  - Make Predictions
- - Evaluate Metrics 
+  ![Predict on Test with GridSearchCV](https://raw.githubusercontent.com/irfe92/SEWA-Energy-Demand-Forecasting/main/Prediction_on_Test_Grid_Searcg_CV.png)
 
+ - Evaluate Metrics 
+After conducting hyperparameter optimization using GridSearchCV, the tuned CatBoost model achieved a 1% improvement in MAPE on the test set compared to the baseline model.
+with default parameters.
