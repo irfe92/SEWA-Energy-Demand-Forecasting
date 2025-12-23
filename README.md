@@ -37,18 +37,18 @@ This dataset provides weather and power consumption data for the Sharjah Electri
 
 
 ## Project Goal : Energy Consumption Forecasting Using Tree-Based Models and Parameter Tuning
-The primary objective of this project is to develop accurate predictive models for energy consumption outcomes by systematically tuning parameters, implementing cross-validation techniques, and applying theoretical knowledge gained from course.
+The primary objective of this project is to develop accurate predictive models for energy consumption outcomes by tuning parameters, implementing cross-validation techniques, and applying theoretical knowledge gained from course.
 
 ## Methodology
 
 ### 1. Features
 - **Target Variable:** Predict SEWA energy consumption (MWh/hour)
-- **Features:** Weather parameters (temperature, humidity) and calendar variables
+- **Features:** Weather parameters (temperature, humidity) and calendar variables 
 
 
 ### 2. Data Preparation
 Proposed preprocessing steps:
-1. Handle missing values (if any) by generating a regular sequance of dates and mergind with the original data
+1. Handle missing values by generating a regular sequance of dates and mergind with the original data
 2. Feature engineering:
    - Remove the 'C' and '%' characters and convert columns to numeric
    - Create lag features for time-series analysis of Temperature (lag 1, lag 2, lag 3)
@@ -98,24 +98,28 @@ The above table summarizes the performance of different models based on their me
    
  - Adjust Explanatory Variables
 
-   I will drop: I will drop 'Max Hum' & 'Day of Month'
+   I can eventually drop 'Max Hum' & 'Day of Month' without loosing too much of an explanatory power, in addition I can set the most          important variable as a "golden feature" (catboost has this parameter).
    
  - Optuna Parameter Tuning
    
    **Final Parameters Optuna:**
-      **iterations:** : 747
-      **learning_rate** : 0.09
-      **depth** : 10
-      **l2_leaf_reg** : 2
+   
+      -**iterations:** : 747
+      -**learning_rate** : 0.09
+      -**depth** : 10
+      -**l2_leaf_reg** : 2
 
    
  - RandomizedSearchCV & GridSearchCV
+
    I've tried both: GridSearchCV as I have a small parameter spaces and ideally would like to have the best parameters possible, and          RandomizedSearchCV to see how "good enough" results perform.
+   
     **Final Parameters GridSearchCV:**
-      **iterations:** : 900
-      **learning_rate** : 0.02
-      **depth** : 6
-      **l2_leaf_reg** : 1
+   
+      -**iterations:** : 900
+      -**learning_rate** : 0.02
+      -**depth** : 6
+      -**l2_leaf_reg** : 1
    
    
  - Fit Final Model
@@ -125,5 +129,4 @@ The above table summarizes the performance of different models based on their me
   ![Predict on Test with GridSearchCV](https://raw.githubusercontent.com/irfe92/SEWA-Energy-Demand-Forecasting/main/Prediction_on_Test_Grid_Search_CV.png)
 
  - Evaluate Metrics 
-After conducting hyperparameter optimization using GridSearchCV, the tuned CatBoost model achieved a 1% improvement in MAPE on the test set compared to the baseline model.
-with default parameters.
+After conducting hyperparameter optimization using GridSearchCV, the tuned CatBoost model achieved a 1% improvement in MAPE on the test set compared to the baseline model with default parameters.
